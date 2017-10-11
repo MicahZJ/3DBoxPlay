@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pic {
+            width: 440px;
+            height: 440px;
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        .parent1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        
+        .change {
+            transition-duration: 1s;
+            transform: rotate3d(0, 1, 0, 180deg);
+        }
+        
+        .backN {
+            transition-duration: 1s;
+            transform: rotate3d(0, 1, 0, 360deg);
+        }
+        
+        .rightN {
+            transition-duration: 1s;
+            transform: rotate3d(0, 1, 1, 180deg);
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            list-style-type: none;
+            transform-origin: center center;
+        }
+        
+        .box li {
+            width: 100px;
+            height: 100px;
+            left: 0;
+            top: 0;
+            /*display: block;*/
+            position: absolute;
+            transform-origin: center center;
+        }
+        
+        .face {
+            transform: rotateY( 0deg) translateZ( 50px);
+        }
+        
+        .back {
+            transform: rotateY( 180deg) translateZ( 50px);
+        }
+        
+        .left {
+            transform: rotateY( 90deg) translateZ( 50px);
+        }
+        
+        .rigth {
+            transform: rotateY( -90deg) translateZ( 50px);
+        }
+        
+        .parent2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 110px;
+            top: 5px;
+            /*border: 1px solid red;*/
+        }
+        
+        .parent3 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 220px;
+            top: 5px;
+        }
+        
+        .parent4 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 330px;
+            top: 5px;
+        }
+        
+        .parent5 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 115px;
+        }
+        
+        .parent6 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 110px;
+            top: 115px;
+        }
+        
+        .parent7 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 220px;
+            top: 115px;
+        }
+        
+        .parent8 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 330px;
+            top: 115px;
+        }
+        
+        .parent9 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+            top: 225px;
+        }
+        
+        .parent10 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 110px;
+            top: 225px;
+        }
+        
+        .parent11 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 220px;
+            top: 225px;
+        }
+        
+        .parent12 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 330px;
+            top: 225px;
+        }
+        
+        .parent13 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+            top: 335px;
+        }
+        
+        .parent14 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 110px;
+            top: 335px;
+        }
+        
+        .parent15 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 220px;
+            top: 335px;
+        }
+        
+        .parent16 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 330px;
+            top: 335px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pic" id="pic">
+        <div class="parent1">
+            <ul class="box" data-id="1">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic1.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent2">
+            <ul class="box" data-id="2">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic2.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent3">
+            <ul class="box" data-id="3">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic3.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent4">
+            <ul class="box" data-id="4">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic4.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent5">
+            <ul class="box" data-id="5">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic5.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent6">
+            <ul class="box" data-id="6">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic6.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent7">
+            <ul class="box" data-id="7">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic7.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent8">
+            <ul class="box" data-id="8">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic8.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent9">
+            <ul class="box" data-id="11">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic1.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent10">
+            <ul class="box" data-id="12">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic2.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent11">
+            <ul class="box" data-id="13">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic3.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent12">
+            <ul class="box" data-id="14">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic4.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent13">
+            <ul class="box" data-id="15">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic5.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent14">
+            <ul class="box" data-id="16">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic6.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent15">
+            <ul class="box" data-id="17">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic7.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="parent16">
+            <ul class="box" data-id="18">
+                <li class="face"><img src="./image/black1.jpg" alt=""></li>
+                <li class="back"><img src="./image/pic8.jpg" alt=""></li>
+                <li class="left"><img src="./image/left.jpg" alt=""></li>
+                <li class="rigth"><img src="./image/right.jpg" alt=""></li>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+
+    <script>
+        var Div = document.getElementById("pic"); // 获取pic容器
+        var oUls = Div.getElementsByTagName("ul"); // 获取所有的ul
+        var arr = new Array(); //新建一个数组用于存储data-id的值
+        var arrC = []; // 新建一个数组用于存储id值
+        var ulS1 = null; // 存储第一次点击的ul
+        var ulS2 = null; // 存储第二次点击的ul
+        var firstClick = true; // 设定是否为第一次点击的初始值为true
+        var timer1 = null; // 定时器初始化
+        var timer2 = null; // 定时器初始化
+        var timer3 = null; // 定时器初始化
+
+        // for循环遍历
+        for (var i = 0; i < oUls.length; i++) {
+
+            //给每个ul设定自定义属性id
+            oUls[i].id = i;
+            //给每个ul绑定事件
+            oUls[i].onclick = play1;
+
+        }
+
+        function play1() {
+
+            if (firstClick) {
+                //把当前ul的id值存入数组arrC中
+                access(arrC, this.id);
+                console.log("存有id值的ul数组", arrC);
+                //给当前的ul添加样式 
+                this.className = this.className + " change";
+                //获得当前ul的自定义属性data-id的值,并赋值给UlId
+                var UlId = this.getAttribute("data-id");
+                //把UlId存进数组arr中
+                access(arr, UlId);
+                //获得与UlId值相同的data-id值的ul，并赋值给全局变量ulS1
+                ulS1 = searchUl("data-id", UlId);
+                //第一次点击之后，下一次就不是初次点击了，所以firstClick的值为false
+                firstClick = false;
+                //设定当前ul不能被重复点击
+                this.onclick = null;
+
+            } else {
+                //给当前的ul添加样式
+                this.className = this.className + " change";
+                //获得当前ul的自定义属性data-id的值,并赋值给UlId
+                var UlId = this.getAttribute("data-id");
+                //把UlId存进数组arr中
+                access(arr, UlId);
+                //获得与UlId值相同的data-id值的ul，并赋值给全局变量ulS2
+                ulS2 = searchUl("data-id", UlId);
+                // alert(ulS2.innerHTML);
+                //调用自定义函数并传入参数uls1，uls2
+                Judge(ulS1, ulS2);
+                //第二次点击以后，下一次点击肯定又要变成初次点击，那么firstClick的值要变为true
+                firstClick = true;
+                //初次被点击的ul能再次被点击
+                oUls[arrC[arrC.length - 1]].onclick = play1;
+                console.log("第一次被点击的ul的id值的坐标", arrC.length - 1);
+                console.log("第一次被点击的ul的id值", arrC[arrC.length - 1]);
+                console.log("第一次ul", oUls[arrC[arrC.length - 1]]);
+                console.log("下一次为第一次点击", firstClick);
+
+            }
+
+        }
+
+        //把值传入数组
+        function access(x, y) {
+            x[x.length] = y;
+            console.log("存进来的值是：", y);
+        }
+
+        //遍历所有ul，返回有data-id的ul
+        function searchUl(getAtt, value) {
+            var UlS = document.getElementsByTagName("ul");
+            // alert(liS.length);
+            for (var i = 0; i < UlS.length; i++) {
+                if (UlS[i].getAttribute(getAtt) == value) {
+                    // alert(liS[i].getAttribute(getAtt));
+                    return UlS[i];
+                }
+            }
+        }
+        //传进来两个参数ulS1是第一次获取的data-id值,ulS2是第二次获取的data-id值,进行比较
+        function Judge(ulS1, ulS2) {
+            //获取数组中第一次点击图片得到的data-id值并赋值给a
+            var a = arr[arr.length - 2];
+            console.log("第一次的data-id", a);
+            //获取数组中第二次点击图片得到的data-id值并赋值给b
+            var b = arr[arr.length - 1] % 10;
+            console.log("第二次的data-id", b);
+            //两次取得的data-id不等
+            if (a != b) {
+                // arr.length--;
+                timer1 = setTimeout(function() {
+                    ulS1.className = ulS1.className + " backN";
+                    ulS1.className = ulS1.className.replace(/change/, "");
+                    ulS2.className = ulS2.className + " backN";
+                    ulS2.className = ulS2.className.replace(/change/, "");
+
+                }, 1000);
+
+            } else {
+                //两次取得的data-id相等
+                ulS1.onclick = null;
+                ulS2.onclick = null;
+                timer3 = setTimeout(function() {
+                    ulS1.className = ulS1.className + " rightN";
+                    ulS2.className = ulS2.className + " rightN";
+                }, 1000);
+
+
+            }
+            timer2 = setTimeout(function() {
+                ulS1.className = ulS1.className.replace(/backN/, "");
+                ulS2.className = ulS2.className.replace(/backN/, "");
+            }, 2000);
+
+
+        }
+    </script>
+</body>
+
+</html>
